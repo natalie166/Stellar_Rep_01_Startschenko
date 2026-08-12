@@ -1,19 +1,19 @@
 ---
-title: "Replication of Stellar et al. (2018): Awe and Humility"
-shorttitle: "Awe Replication"
+title: "Replikation von Stellar et al. (2018): Ehrfurcht und Demut"
+shorttitle: "Replikation zu Ehrfurcht"
 author:
-  - name: Felix Schönbrodt
+  - name: Natalie Startschenko
     corresponding: true
-    orcid: 0000-0002-8282-3910
-    email: felix.schoenbrodt@psy.lmu.de
+    orcid: 0009-0006-6631-0900
+    email: n.startschenko@campus.lmu.de
     affiliations:
-      - name: Generic University
-        department: Department of Scholarly Studies
-        address: 1234 Capital St.
-        city: New York
-        region: NY
-        country: USA
-        postal-code: 12084-1234
+      - name: Ludwig-Maximilians-Universität München
+        department: Department Psychologie
+        address: Leopoldstr. 13
+        city: München
+        region: Bayern
+        country: Deutschland
+        postal-code: 80802
 author-note:
   status-changes: 
     affiliation-change: ~
