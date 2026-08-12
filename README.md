@@ -1,3 +1,12 @@
+Replikationsstudie Stellar et al. (2018)
+
+Dieses Repository enthält meine Hausarbeit zur LMU-Replikationsstudie von Stellar et al. (2018). Die Replikationsstudie wurde im Sommersemester 2026 im Rahmen des Forschungsorientierten Praktikums I als Teil des CREP-Projekts durchgeführt.
+
+Autorin: Natalie Startschenko
+Kontakt: n.startschenko@campus.lmu.de
+
+Das Repository basiert auf dem von Felix Schönbrodt bereitgestellten Template für die Replikationsstudie.
+
 This is the shared course repository for analyzing the LMU replication study of Stellar et al. (2018), done in summer 2026 as part of the [CREP project](https://www.crep-psych.org).
 
 - [Course teaching material](https://nicebread.github.io/Empra1_2026/)
