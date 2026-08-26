@@ -60,13 +60,13 @@ This is my first paragraph. Any section headings in the introduction should be i
 
 This is a reference [@cohen2003applied].
 
-# Method
+# Methode
 
-The hypotheses, operationalizations, analysis plan, inference criteria, and sample size justification have been preregistered at <https://osf.io/537aq>. Open material and data are available at [https://osf.io/cy287](https://osf.io/cy287).
+Die Hypothesen, Operationalisierungen, der Analyseplan, die Inferenzkriterien und die Begründung der Stichprobengröße wurden präregistriert unter <https://osf.io/537aq>. Die Materialien und Daten sind unter <https://osf.io/cy287> verfügbar. Der reproduzierbare Analysecode und das Manuskript dieser Arbeit sind im GitHub-Repository unter <https://github.com/natalie166/Stellar_Rep_01_Startschenko.git> verfügbar.
 
-## Participants
+## Stichprobe
 
-The initial sample had `r nrow(dat0)` participants. We preregistered to exclude participants who did not write anything in the writing assignment (`r sum(!dat0$has_writing_assignment)` exclusions) or indicated that their data should not be used (`r sum(!dat0$has_agreed)` exclusions), leading to a final sample size of *n* = `r nrow(dat)`. The final sample had a mean age of `r mean(demo$age, na.rm = TRUE) %>% round(1)` (*SD* = `r sd(demo$age, na.rm = TRUE) %>% round(1)`, range: `r min(demo$age, na.rm = TRUE)`--`r max(demo$age, na.rm = TRUE)`).
+Die Ausgangsstichprobe umfasste `r nrow(dat0)` Teilnehmer. Präregistriert war der Ausschluss von Teilnehmern, die die Schreibaufgabe nicht bearbeitet hatten (`r sum(!dat0$has_writing_assignment)` Ausschlüsse) oder der Verwendung ihrer Daten nicht zugestimmt hatten (`r sum(!dat0$has_agreed)` Ausschluss). Nach Anwendung dieser Ausschlusskriterien umfasste die finale Stichprobe *n* = `r nrow(dat)`. Das durchschnittliche Alter betrug `r mean(demo$age, na.rm = TRUE) %>% round(1)` Jahre (*SD* = `r sd(demo$age, na.rm = TRUE) %>% round(1)`, Spannweite: `r min(demo$age, na.rm = TRUE)`--`r max(demo$age, na.rm = TRUE)` Jahre). Von den Teilnehmern waren `r sum(demo$gender == "female", na.rm = TRUE)` weiblich, `r sum(demo$gender == "male", na.rm = TRUE)` männlich und `r sum(demo$gender == "non-binary", na.rm = TRUE)` nicht-binär; `r sum(demo$gender == "prefer not to say", na.rm = TRUE)` Person machte keine Angabe zum Geschlecht.
 
 ## Measures
 
