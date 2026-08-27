@@ -66,11 +66,23 @@ Die Hypothesen, Operationalisierungen, der Analyseplan, die Inferenzkriterien un
 
 ## Stichprobe
 
-Die Ausgangsstichprobe umfasste `r nrow(dat0)` Teilnehmer. Präregistriert war der Ausschluss von Teilnehmern, die die Schreibaufgabe nicht bearbeitet hatten (`r sum(!dat0$has_writing_assignment)` Ausschlüsse) oder der Verwendung ihrer Daten nicht zugestimmt hatten (`r sum(!dat0$has_agreed)` Ausschluss). Nach Anwendung dieser Ausschlusskriterien umfasste die finale Stichprobe *n* = `r nrow(dat)`. Das durchschnittliche Alter betrug `r mean(demo$age, na.rm = TRUE) %>% round(1)` Jahre (*SD* = `r sd(demo$age, na.rm = TRUE) %>% round(1)`, Spannweite: `r min(demo$age, na.rm = TRUE)`--`r max(demo$age, na.rm = TRUE)` Jahre). Von den Teilnehmern waren `r sum(demo$gender == "female", na.rm = TRUE)` weiblich, `r sum(demo$gender == "male", na.rm = TRUE)` männlich und `r sum(demo$gender == "non-binary", na.rm = TRUE)` nicht-binär; `r sum(demo$gender == "prefer not to say", na.rm = TRUE)` Person machte keine Angabe zum Geschlecht.
+Die Teilnehmer wurden über das SONA-Portal des Departments Psychologie der Ludwig-Maximilians-Universität München sowie über digital und vor Ort verbreitete Flyer rekrutiert. Die Flyer wurden unter anderem über soziale Medien und verschiedene Chat-Gruppen geteilt sowie an der Universität ausgehängt. Psychologiestudenten der LMU konnten für ihre Teilnahme 0,25 Versuchspersonenstunden erhalten. Die Teilnahme war auf Personen ab 18 Jahren beschränkt. Die Ausgangsstichprobe umfasste `r nrow(dat0)` Teilnehmer. Präregistriert war der Ausschluss von Teilnehmern, die die Schreibaufgabe nicht bearbeitet hatten (`r sum(!dat0$has_writing_assignment)` Ausschlüsse) oder der Verwendung ihrer Daten nicht zugestimmt hatten (`r sum(!dat0$has_agreed)` Ausschluss). Nach Anwendung dieser Ausschlusskriterien umfasste die finale Stichprobe *n* = `r nrow(dat)`. Das durchschnittliche Alter betrug `r mean(demo$age, na.rm = TRUE) %>% round(1)` Jahre (*SD* = `r sd(demo$age, na.rm = TRUE) %>% round(1)`, Spannweite: `r min(demo$age, na.rm = TRUE)`--`r max(demo$age, na.rm = TRUE)` Jahre). Von den Teilnehmern waren `r sum(demo$gender == "female", na.rm = TRUE)` weiblich, `r sum(demo$gender == "male", na.rm = TRUE)` männlich und `r sum(demo$gender == "non-binary", na.rm = TRUE)` nicht-binär; `r sum(demo$gender == "prefer not to say", na.rm = TRUE)` Person machte keine Angabe zum Geschlecht.
 
-## Measures
+## Messinstrumente
 
-## Procedure
+### Verhaltensmaß der Demut
+
+Demut wurde anhand einer Schreibaufgabe als Verhaltensmaß operationalisiert. Die Teilnehmer wurden gebeten, innerhalb von zwei Minuten zunächst ihre eigenen Stärken und anschließend ihre Schwächen zu beschreiben. Dabei sollten sie sich vorstellen, diese einer Person mitzuteilen, die sie gerade erst kennengelernt hatten. Die Freitextantworten wurden vor der Kodierung anonymisiert. Für die Kodierung wurde vorab ein gemeinsames Codebook erstellt, das Kriterien für die Zählung von Stärken und Schwächen festlegte. Jede Freitextantwort wurde unabhängig von zwei verblindeten Ratern kodiert. Bei abweichenden Kodierungen wurden die betreffenden Antworten gemeinsam diskutiert und eine einheitliche Kodierung festgelegt. Als Verhaltensindex der Demut wurde das Verhältnis der Anzahl genannter Stärken zur Anzahl genannter Schwächen berechnet.
+
+### Emotionsratings
+
+Nach der Videopräsentation bewerteten die Teilnehmer, wie stark sie Ehrfurcht, Angst, Staunen, Freude und Faszination empfunden hatten. Die Bewertung erfolgte jeweils auf einer siebenstufigen Skala von 1 („überhaupt nicht“) bis 7 („vollkommen“). Zur Erfassung von Ehrfurcht wurde der Mittelwert der Items Ehrfurcht, Staunen und Faszination gebildet. Die daraus gebildete Ehrfurchtsskala wies eine gute interne Konsistenz auf (Cronbachs α = .88).
+
+## Ablauf
+
+Die Studie wurde online durchgeführt. Die Teilnehmer wurden zufällig einer von drei Videobedingungen zugewiesen. In der ersten Experimentalbedingung wurde das ursprüngliche Ehrfurchtsvideo unverändert übernommen. Dieses zeigte unter anderem animierte Darstellungen von Planeten und weiteren Elementen des Universums. Für die zweite Experimentalbedingung wurde ein neues Ehrfurchtsvideo verwendet, das ein zunehmendes Herauszoomen von der Erde bis hin zur Milchstraße und zum Universum zeigte. Dieses wurde mit der Musik des ursprünglichen Ehrfurchtsvideos unterlegt. In der Kontrollbedingung wurde wie in der Originalstudie ein neutrales Video mit einer Anleitung zum Bau einer Mauer verwendet. Die ursprünglich englische Tonspur wurde hierfür ins Deutsche übersetzt und neu eingesprochen.
+
+Im Anschluss bearbeiteten die Teilnehmer für zwei Minuten die Schreibaufgabe zu ihren eigenen Stärken und Schwächen und bewerteten ihr emotionales Erleben während des Videos. Zudem machten sie demografische Angaben. Ergänzend wurden Kontrollfragen zur Studiendurchführung erhoben. Diese erfassten unter anderem, ob das Video vollständig abgespielt wurde, der Ton eingeschaltet war und die Teilnehmer dem Video aufmerksam gefolgt waren. Die Kontrollfragen stellten eine Ergänzung gegenüber der Originalstudie dar.
 
 ## Statistical Procedure
 
