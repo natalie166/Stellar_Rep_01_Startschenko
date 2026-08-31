@@ -107,11 +107,27 @@ Ergänzend wurde eine explorative Analyse durchgeführt, in der das ursprünglic
 
 Bei der Umsetzung des präregistrierten Ausreißerkriteriums im Präprocessing bestand eine geringfügige Abweichung von der Präregistrierung. In der Präregistrierung war auf Grundlage der Auswertung der Originaldaten ein einseitiges Kriterium von $z > 3$ beschrieben worden. Im Präprocessing wurde dagegen ein zweiseitiges Kriterium von $|z| > 3$ verwendet. Da in der vorliegenden Stichprobe `r if (sum(dat$num_strengths_z < -3, na.rm = TRUE) + sum(dat$num_weaknesses_z < -3, na.rm = TRUE) == 0) "keine Werte unter $z = -3$ auftraten" else "Werte unter $z = -3$ auftraten"`, führte dieser Unterschied zu keinen zusätzlichen Ausschlüssen und hatte somit keinen Einfluss auf die Analysen.
 
-# Results
+# Ergebnisse
 
-## Confirmatory Results
+## Deskriptive Ergebnisse
 
-The results was: `r apa_print(t_H1)$full_result`.
+Die Ehrfurchtsratings waren nach dem ursprünglichen Ehrfurchtsvideo ($M$ = `r sprintf("%.2f", mean(dat$awe_scale[dat$condition == "exp_old"], na.rm = TRUE))`, $SD$ = `r sprintf("%.2f", sd(dat$awe_scale[dat$condition == "exp_old"], na.rm = TRUE))`) und nach dem neuen Ehrfurchtsvideo ($M$ = `r sprintf("%.2f", mean(dat$awe_scale[dat$condition == "exp_new"], na.rm = TRUE))`, $SD$ = `r sprintf("%.2f", sd(dat$awe_scale[dat$condition == "exp_new"], na.rm = TRUE))`) höher als in der Kontrollbedingung ($M$ = `r sprintf("%.2f", mean(dat$awe_scale[dat$condition == "control"], na.rm = TRUE))`, $SD$ = `r sprintf("%.2f", sd(dat$awe_scale[dat$condition == "control"], na.rm = TRUE))`). Der Unterschied zwischen der Kontrollbedingung und dem ursprünglichen Ehrfurchtsvideo war statistisch signifikant, $t$(`r sprintf("%.0f", t1_old$parameter)`) = `r sprintf("%.2f", t1_old$statistic)`, $p$ `r if (t1_old$p.value < .001) "< .001" else paste0("= ", sub("^0", "", sprintf("%.3f", t1_old$p.value)))`, $d$ = `r sprintf("%.2f", effectsize::effectsize(t1_old)$Cohens_d)`. Auch der Unterschied zwischen der Kontrollbedingung und dem neuen Ehrfurchtsvideo war statistisch signifikant, $t$(`r sprintf("%.2f", t1_new$parameter)`) = `r sprintf("%.2f", t1_new$statistic)`, $p$ `r if (t1_new$p.value < .001) "< .001" else paste0("= ", sub("^0", "", sprintf("%.3f", t1_new$p.value)))`, $d$ = `r sprintf("%.2f", effectsize::effectsize(t1_new)$Cohens_d)`.
+
+## Konfirmatorische Analysen
+
+### Hypothese 1
+
+H1 sagte vorher, dass das ursprüngliche Ehrfurchtsvideo im Vergleich zur neutralen Kontrollbedingung zu höherer Demut im Verhaltensmaß führt. H1 wurde nicht unterstützt. Der logarithmierte Verhältniswert war in der Kontrollbedingung ($n$ = `r sum(dat_H1$condition == "control")`, $M$ = `r sprintf("%.2f", mean(dat_H1$balance_log[dat_H1$condition == "control"], na.rm = TRUE))`, $SD$ = `r sprintf("%.2f", sd(dat_H1$balance_log[dat_H1$condition == "control"], na.rm = TRUE))`) zwar höher als nach dem ursprünglichen Ehrfurchtsvideo ($n$ = `r sum(dat_H1$condition == "exp_old")`, $M$ = `r sprintf("%.2f", mean(dat_H1$balance_log[dat_H1$condition == "exp_old"], na.rm = TRUE))`, $SD$ = `r sprintf("%.2f", sd(dat_H1$balance_log[dat_H1$condition == "exp_old"], na.rm = TRUE))`), der Unterschied war jedoch nicht statistisch signifikant, $t$(`r sprintf("%.0f", t_H1$parameter)`) = `r sprintf("%.2f", t_H1$statistic)`, $p$ `r if (t_H1$p.value < .001) "< .001" else paste0("= ", sub("^0", "", sprintf("%.3f", t_H1$p.value)))`, $d$ = `r sprintf("%.2f", effectsize::effectsize(t_H1)$Cohens_d)`.
+
+### Hypothese 2
+
+H2 sagte vorher, dass das neue Ehrfurchtsvideo im Vergleich zur neutralen Kontrollbedingung zu höherer Demut im Verhaltensmaß führt. H2 wurde nicht unterstützt. Der logarithmierte Verhältniswert war nach dem neuen Ehrfurchtsvideo ($n$ = `r sum(dat_H2$condition == "exp_new")`, $M$ = `r sprintf("%.2f", mean(dat_H2$balance_log[dat_H2$condition == "exp_new"], na.rm = TRUE))`, $SD$ = `r sprintf("%.2f", sd(dat_H2$balance_log[dat_H2$condition == "exp_new"], na.rm = TRUE))`) geringfügig höher als in der Kontrollbedingung ($n$ = `r sum(dat_H2$condition == "control")`, $M$ = `r sprintf("%.2f", mean(dat_H2$balance_log[dat_H2$condition == "control"], na.rm = TRUE))`, $SD$ = `r sprintf("%.2f", sd(dat_H2$balance_log[dat_H2$condition == "control"], na.rm = TRUE))`). Der Unterschied war nicht statistisch signifikant, $t$(`r sprintf("%.0f", t_H2$parameter)`) = `r sprintf("%.2f", t_H2$statistic)`, $p$ `r if (t_H2$p.value < .001) "< .001" else paste0("= ", sub("^0", "", sprintf("%.3f", t_H2$p.value)))`, $d$ = `r sprintf("%.2f", effectsize::effectsize(t_H2)$Cohens_d)`.
+
+## Explorative Analysen
+
+### Explorative Analyse E2
+
+In E2 wurde explorativ untersucht, ob das neue Ehrfurchtsvideo im Vergleich zum ursprünglichen Ehrfurchtsvideo zu höherer Demut im Verhaltensmaß führt. E2 wurde nicht unterstützt. Der logarithmierte Verhältniswert war nach dem neuen Ehrfurchtsvideo ($n$ = `r sum(dat_E2$condition == "exp_new")`, $M$ = `r sprintf("%.2f", mean(dat_E2$balance_log[dat_E2$condition == "exp_new"], na.rm = TRUE))`, $SD$ = `r sprintf("%.2f", sd(dat_E2$balance_log[dat_E2$condition == "exp_new"], na.rm = TRUE))`) höher als nach dem ursprünglichen Ehrfurchtsvideo ($n$ = `r sum(dat_E2$condition == "exp_old")`, $M$ = `r sprintf("%.2f", mean(dat_E2$balance_log[dat_E2$condition == "exp_old"], na.rm = TRUE))`, $SD$ = `r sprintf("%.2f", sd(dat_E2$balance_log[dat_E2$condition == "exp_old"], na.rm = TRUE))`). Der Unterschied war nicht statistisch signifikant, $t$(`r sprintf("%.0f", t_E2$parameter)`) = `r sprintf("%.2f", t_E2$statistic)`, $p$ `r if (t_E2$p.value < .001) "< .001" else paste0("= ", sub("^0", "", sprintf("%.3f", t_E2$p.value)))`, $d$ = `r sprintf("%.2f", effectsize::effectsize(t_E2)$Cohens_d)`.
 
 # Discussion
 
