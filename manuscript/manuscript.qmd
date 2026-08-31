@@ -45,6 +45,13 @@ format:
 # relative to the manuscript. "../" means: go one directory up.
 source("../0b-preprocessing.R", chdir=TRUE)
 source("../1-scales.R", chdir=TRUE)
+
+omega_awe <- psych::omega(
+  awe_items,
+  nfactors = 1,
+  plot = FALSE
+)
+
 source("../2-descriptive_stat.R", chdir=TRUE)
 source("../3-confirmatory_analyses.R", chdir=TRUE)
 source("../4-exploratory_analyses.R", chdir=TRUE)
@@ -76,7 +83,7 @@ Demut wurde anhand einer Schreibaufgabe als Verhaltensmaß operationalisiert. Di
 
 ### Emotionsratings
 
-Nach der Videopräsentation bewerteten die Teilnehmer, wie stark sie Ehrfurcht, Angst, Staunen, Freude und Faszination empfunden hatten. Die Bewertung erfolgte jeweils auf einer siebenstufigen Skala von 1 („überhaupt nicht“) bis 7 („vollkommen“). Zur Erfassung von Ehrfurcht wurde der Mittelwert der Items Ehrfurcht, Staunen und Faszination gebildet. Die daraus gebildete Ehrfurchtsskala wies eine gute interne Konsistenz auf (Cronbachs α = .88).
+Nach der Videopräsentation bewerteten die Teilnehmer, wie stark sie Ehrfurcht, Angst, Staunen, Freude und Faszination empfunden hatten. Die Bewertung erfolgte jeweils auf einer siebenstufigen Skala von 1 („überhaupt nicht“) bis 7 („vollkommen“). Zur Erfassung von Ehrfurcht wurde der Mittelwert der Items Ehrfurcht, Staunen und Faszination gebildet. Die daraus gebildete Ehrfurchtsskala wies eine gute interne Konsistenz auf (Cronbachs $\alpha$ = `r sub("^0", "", sprintf("%.2f", cronbach_alpha$total$raw_alpha))`, McDonalds $\omega$ = `r sub("^0", "", sprintf("%.2f", omega_awe$omega.tot))`).
 
 ## Ablauf
 
@@ -98,7 +105,7 @@ Ergänzend wurde eine explorative Analyse durchgeführt, in der das ursprünglic
 
 ## Abweichungen von der Präregistrierung
 
-Nur wenn es welche gab.
+Bei der Umsetzung des präregistrierten Ausreißerkriteriums im Präprocessing bestand eine geringfügige Abweichung von der Präregistrierung. In der Präregistrierung war auf Grundlage der Auswertung der Originaldaten ein einseitiges Kriterium von $z > 3$ beschrieben worden. Im Präprocessing wurde dagegen ein zweiseitiges Kriterium von $|z| > 3$ verwendet. Da in der vorliegenden Stichprobe `r if (sum(dat$num_strengths_z < -3, na.rm = TRUE) + sum(dat$num_weaknesses_z < -3, na.rm = TRUE) == 0) "keine Werte unter $z = -3$ auftraten" else "Werte unter $z = -3$ auftraten"`, führte dieser Unterschied zu keinen zusätzlichen Ausschlüssen und hatte somit keinen Einfluss auf die Analysen.
 
 # Results
 
