@@ -38,7 +38,6 @@ format:
   apaquarto-html: default
 ---
 
-
 ```{r, echo=FALSE, include=FALSE}
 
 # This manuscript is rendered within its subfolder /manuscript. Therefore we need paths
@@ -65,7 +64,15 @@ This is my first paragraph. Any section headings in the introduction should be i
 
 ## Section in Introduction
 
-This is a reference [@cohen2003applied].
+This is a reference [@cohen2003applied].[@keltner2003]
+
+Demut kann nicht nur als stabiles Persönlichkeitsmerkmal, sondern auch als veränderlicher Zustand betrachtet werden [@chancellor2013]. @stellar2018 untersuchten in fünf Studien, ob das Erleben von Ehrfurcht Demut fördern kann.
+
+Für die vorliegende Replikation ist insbesondere Studie 3 relevant, in der Ehrfurcht experimentell durch ein zweiminütiges Video über die Weite des Universums induziert wurde. Teilnehmer der neutralen Kontrollbedingung sahen stattdessen ein zweiminütiges Anleitungsvideo zum Bau einer Mauer. Anschließend beschrieben die Teilnehmer ihre persönlichen Stärken und Schwächen. Als Maß für behaviorale Demut wurde das Verhältnis der Anzahl genannter Stärken zur Anzahl genannter Schwächen herangezogen, wobei ein niedrigeres Verhältnis höhere behaviorale Demut abbildete. @stellar2018 fanden eine höhere behaviorale Demut in der originalen Ehrfurchtsbedingung als in der neutralen Kontrollbedingung. Dieser Unterschied zeigte sich insbesondere darin, dass Teilnehmer der originalen Ehrfurchtsbedingung weniger Stärken nannten, während sich die Anzahl der genannten Schwächen nicht zwischen den Bedingungen unterschied.
+
+Eine Replikation von Studie 3 durch @bertrand2024 konnte diesen Befund nicht bestätigen. Obwohl das originale Ehrfurchtsvideo erfolgreich Ehrfurcht induzierte, unterschieden sich die Teilnehmer der originalen Ehrfurchtsbedingung und der neutralen Kontrollbedingung nicht signifikant hinsichtlich ihrer behavioralen Demut. Damit konnte der von @stellar2018 berichtete Effekt auf behaviorale Demut nicht repliziert werden.
+
+Die vorliegende Studie repliziert Studie 3 von @stellar2018 und erweitert das ursprüngliche Design um ein modernes Ehrfurchtsvideo. Diese Erweiterung beruhte auf der Überlegung, dass Merkmale der verwendeten Videostimuli für die experimentelle Induktion von Ehrfurcht relevant sein können, wie auch die Befunde von @chirico2017 nahelegen. Untersucht wurden eine neutrale Kontrollbedingung (*Neutral Control*), eine originale Ehrfurchtsbedingung (*Awe Original*) und eine moderne Ehrfurchtsbedingung (*Awe Modern*). Neben den konfirmatorischen Hypothesen wurden mehrere explorative Fragestellungen präregistriert. Die vorliegende Hausarbeit beschränkt sich auf die explorative Analyse *E2*, in der die originale und die moderne Ehrfurchtsbedingung hinsichtlich behavioraler Demut verglichen werden.
 
 # Methode
 
@@ -143,6 +150,5 @@ In E2 wurde explorativ untersucht, ob das neue Ehrfurchtsvideo im Vergleich zum 
 :::
 
 # This Section Is an Appendix {#apx-a}
-
 
 # Another Appendix {#apx-b}
