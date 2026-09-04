@@ -30,6 +30,9 @@ abstract: "This document is a template."
 impact-statement: "This template helps you get started."
 keywords: [Keyword 1, Keyword 2, Keyword 3]
 bibliography: bibliography.bib
+crossref:
+  fig-title: "Abbildung"
+  fig-prefix: "Abbildung"
 mask: false
 format:
   apaquarto-pdf:
@@ -134,6 +137,17 @@ H2 sagte vorher, dass das neue Ehrfurchtsvideo im Vergleich zur neutralen Kontro
 
 In E2 wurde explorativ untersucht, ob das neue Ehrfurchtsvideo im Vergleich zum ursprünglichen Ehrfurchtsvideo zu höherer Demut im Verhaltensmaß führt. E2 wurde nicht unterstützt. Der logarithmierte Verhältniswert war nach dem neuen Ehrfurchtsvideo ($n$ = `r sum(dat_E2$condition == "exp_new")`, $M$ = `r sprintf("%.2f", mean(dat_E2$balance_log[dat_E2$condition == "exp_new"], na.rm = TRUE))`, $SD$ = `r sprintf("%.2f", sd(dat_E2$balance_log[dat_E2$condition == "exp_new"], na.rm = TRUE))`) höher als nach dem ursprünglichen Ehrfurchtsvideo ($n$ = `r sum(dat_E2$condition == "exp_old")`, $M$ = `r sprintf("%.2f", mean(dat_E2$balance_log[dat_E2$condition == "exp_old"], na.rm = TRUE))`, $SD$ = `r sprintf("%.2f", sd(dat_E2$balance_log[dat_E2$condition == "exp_old"], na.rm = TRUE))`). Der Unterschied war nicht statistisch signifikant, $t$(`r sprintf("%.0f", t_E2$parameter)`) = `r sprintf("%.2f", t_E2$statistic)`, $p$ `r if (t_E2$p.value < .001) "< .001" else paste0("= ", sub("^0", "", sprintf("%.3f", t_E2$p.value)))`, $d$ = `r sprintf("%.2f", effectsize::effectsize(t_E2)$Cohens_d)`.
 
+@fig-humility zeigt die Verteilung der behavioralen Demut nach Darbietung des neutralen Videos sowie des ursprünglichen und des neuen Ehrfurchtsvideos.
+
+```{r}
+#| label: fig-humility
+#| fig-cap: "Behaviorale Demut nach der Videodarbietung"
+#| echo: false
+#| dev: cairo_pdf
+
+fig_humility
+```
+
 # Diskussion
 
 @stellar2018 berichteten in Studie 3, dass die experimentelle Induktion von Ehrfurcht zu höherer behavioraler Demut führte. In der vorliegenden Replikation konnte dieser Befund nicht bestätigt werden. Weder das originale noch das moderne Ehrfurchtsvideo führten im Vergleich zur neutralen Kontrollbedingung zu höherer behavioraler Demut. Auch zwischen der originalen und der modernen Ehrfurchtsbedingung zeigte sich kein signifikanter Unterschied in der behavioralen Demut. Beide Ehrfurchtsvideos führten jedoch zu höheren Ehrfurchtswerten als die neutrale Kontrollbedingung.
@@ -146,7 +160,7 @@ Auch die Erweiterung um das moderne Ehrfurchtsvideo führte nicht zu den erwarte
 
 Eine erste Limitation betrifft die statistische Teststärke der Studie. Die angestrebte Stichprobengröße wurde bis zum Ende der Datenerhebung nicht vollständig erreicht. Während die Präregistrierung auf Grundlage des in der Originalstudie berichteten Effekts von *d* = 0.51 eine Teststärke von .80 vorsah, lag die tatsächlich erreichte Power für die konfirmatorische Prüfung von *H1* bei etwa .70. Dadurch war die Wahrscheinlichkeit geringer, einen Effekt in der erwarteten Größenordnung statistisch nachzuweisen. Die nicht signifikanten Ergebnisse sollten daher nicht als eindeutiger Nachweis dafür interpretiert werden, dass kein Effekt von Ehrfurcht auf behaviorale Demut besteht. Zukünftige Replikationsstudien sollten eine ausreichend große Stichprobe einplanen, um eine höhere Teststärke zu gewährleisten.
 
-Eine weitere Limitation betrifft die Operationalisierung behavioraler Demut. In Anlehnung an @stellar2018 wurde behaviorale Demut über das Verhältnis der Anzahl genannter Stärken zur Anzahl genannter Schwächen operationalisiert. Demut umfasst jedoch mehrere Facetten, sodass dieses Maß das Konstrukt nur teilweise abbildet [@chancellor2013; @stellar2018]. Zudem konnte das Verhältnis für Teilnehmer, die keine Schwächen nannten, nicht berechnet werden, sodass diese Fälle von den entsprechenden Analysen ausgeschlossen wurden. Dieses Problem trat auch in der Replikation von @bertrand2024 auf. In der Präregistrierung waren daher explorative Analysen alternativer Operationalisierungen vorgesehen, bei denen Teilnehmer ohne genannte Schwächen berücksichtigt werden können. Diese waren jedoch nicht Gegenstand der vorliegenden Arbeit. Zukünftige Studien sollten die Eignung solcher alternativen Operationalisierungen weiter untersuchen.
+Eine weitere Limitation betrifft die Operationalisierung behavioraler Demut. In Anlehnung an @stellar2018 wurde behaviorale Demut über das Verhältnis der Anzahl genannter Stärken zur Anzahl genannter Schwächen operationalisiert. Demut umfasst jedoch mehrere Facetten, sodass dieses Maß das Konstrukt nur teilweise abbildet [@chancellor2013; @stellar2018]. Zudem konnte das Verhältnis für Teilnehmer, die keine Schwächen nannten, nicht berechnet werden, sodass diese Fälle von den entsprechenden Analysen ausgeschlossen wurden. Dieses Problem trat auch in der Replikation von @bertrand2024 auf. In der Präregistrierung waren zudem explorative Analysen alternativer Operationalisierungen vorgesehen, bei denen Teilnehmer ohne genannte Schwächen berücksichtigt werden können. Diese waren jedoch nicht Gegenstand der vorliegenden Arbeit. Zukünftige Studien sollten die Eignung solcher alternativen Operationalisierungen weiter untersuchen.
 
 Die vorliegenden Befunde verdeutlichen die Notwendigkeit, die Bedingungen eines möglichen Zusammenhangs zwischen Ehrfurcht und behavioraler Demut genauer zu untersuchen. Zukünftige Forschung könnte insbesondere prüfen, welche Merkmale der Ehrfurchtsinduktion für einen möglichen Einfluss auf behaviorale Demut relevant sind. Dabei könnten unterschiedliche Formen der Induktion berücksichtigt werden, da @chirico2017 zeigen, dass die Art der Darbietung für das Erleben von Ehrfurcht relevant sein kann. Darüber hinaus erscheint es sinnvoll, mögliche Einflussfaktoren auf den Zusammenhang zwischen Ehrfurcht und Demut zu untersuchen.
 

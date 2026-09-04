@@ -7,6 +7,7 @@ library(ggstatsplot)
 library(dplyr)
 library(rio)
 library(effectsize)
+library(ggtext)
 
 dat <- import("processed_data/Rep01_processed.csv")
 
@@ -17,7 +18,7 @@ dat <- import("processed_data/Rep01_processed.csv")
 # H1: Relative to a neutral control condition, the original awe inducing video increases humility in a behavioral measure.
 
 # This time, do *not* exclude the zero-weakness cases. Also keep the outliers.
-  dat_H1_alt <- dat %>%
+dat_H1_alt <- dat %>%
     filter(condition %in% c("exp_old", "control"))
 
 ggbetweenstats(
@@ -117,3 +118,69 @@ ggplot(dat_E2, aes(x = condition, y = balance_log)) +
 
 # E6: We explore the moderating effect of participants’ self-reported attentiveness on the awe-inducing effect of the video (awe video vs. control condition).
 
+
+# Figure for manuscript
+# ========================================================
+# Visualize behavioral humility across all three conditions
+# using the same exclusion criteria as for H1, H2, and E2.
+
+dat_figure <- dat %>%
+  filter(!has_outlier, !has_zero_weaks) %>%
+  filter(condition %in% c("control", "exp_old", "exp_new")) %>%
+  mutate(
+    condition = factor(
+      condition,
+      levels = c("control", "exp_old", "exp_new"),
+      labels = c(
+        "Neutrales Video",
+        "Ursprüngliches Ehrfurchtsvideo",
+        "Neues Ehrfurchtsvideo"
+      )
+    )
+  )
+
+# Add a note below the figure
+fig_humility <- ggplot(
+  dat_figure,
+  aes(x = condition, y = balance_log)
+) +
+  geom_jitter(
+    width = 0.1,
+    alpha = 0.4
+  ) +
+  stat_summary(
+    fun = mean,
+    geom = "point",
+    size = 3
+  ) +
+  stat_summary(
+    fun.data = mean_cl_normal,
+    geom = "errorbar",
+    width = 0.15
+  ) +
+  theme_minimal(
+    base_family = "Arial",
+    base_size = 11
+  ) +
+  labs(
+    x = "Bedingung",
+    y = "Behaviorale Demut",
+    caption = paste0(
+      "*Anmerkung.* Dargestellt ist der log-transformierte Quotient aus<br>",
+      "der Anzahl genannter Stärken und Schwächen.<br>",
+      "Niedrigere Werte entsprechen höherer behavioraler Demut.<br>",
+      "Kleine Punkte zeigen individuelle Werte. Große Punkte zeigen Mittelwerte.<br>",
+      "Die Fehlerbalken zeigen 95%-Konfidenzintervalle."
+    )
+  ) +
+  theme(
+    plot.caption = ggtext::element_markdown(
+      family = "Arial",
+      hjust = 0,
+      size = 11,
+      lineheight = 1.1,
+      margin = margin(t = 8)
+    )
+  )
+
+fig_humility
