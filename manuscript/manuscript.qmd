@@ -150,7 +150,9 @@ Eine weitere Limitation betrifft die Operationalisierung behavioraler Demut. In 
 
 Die vorliegenden Befunde verdeutlichen die Notwendigkeit, die Bedingungen eines möglichen Zusammenhangs zwischen Ehrfurcht und behavioraler Demut genauer zu untersuchen. Zukünftige Forschung könnte insbesondere prüfen, welche Merkmale der Ehrfurchtsinduktion für einen möglichen Einfluss auf behaviorale Demut relevant sind. Dabei könnten unterschiedliche Formen der Induktion berücksichtigt werden, da @chirico2017 zeigen, dass die Art der Darbietung für das Erleben von Ehrfurcht relevant sein kann. Darüber hinaus erscheint es sinnvoll, mögliche Einflussfaktoren auf den Zusammenhang zwischen Ehrfurcht und Demut zu untersuchen.
 
-## Conclusion
+## Fazit
+
+Die vorliegende Replikation untersuchte den Einfluss von Ehrfurcht auf behaviorale Demut. Weder das originale noch das moderne Ehrfurchtsvideo führte im Vergleich zur neutralen Kontrollbedingung zu höherer behavioraler Demut. Auch zwischen den beiden Ehrfurchtsbedingungen zeigte sich kein signifikanter Unterschied. Der von @stellar2018 berichtete Effekt von Ehrfurcht auf behaviorale Demut konnte somit unter den Bedingungen der vorliegenden Studie nicht repliziert werden.
 
 # References
 
