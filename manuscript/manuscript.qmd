@@ -26,9 +26,8 @@ author-note:
     financial-support: ~
     gratitude: ~
     authorship-agreements: ~
-abstract: "This document is a template."
-impact-statement: "This template helps you get started."
-keywords: [Keyword 1, Keyword 2, Keyword 3]
+abstract: "Stellar et al. (2018) berichteten, dass experimentell induzierte Ehrfurcht zu höherer behavioraler Demut führte. Die vorliegende Studie replizierte diesen Befund und untersuchte zusätzlich, ob ein neues, moderneres Ehrfurchtsvideo ebenfalls zu höherer behavioraler Demut führt. Die Analysen basierten auf Daten von 162 Teilnehmern. Diese wurden einer von drei Bedingungen zugewiesen, in denen entweder ein neutrales Kontrollvideo, das in der Originalstudie verwendete Ehrfurchtsvideo oder ein neues Ehrfurchtsvideo gezeigt wurde. Beide Ehrfurchtsvideos führten im Vergleich zur neutralen Kontrollbedingung zu signifikant höheren Ehrfurchtsratings. Weder das ursprüngliche noch das neue Ehrfurchtsvideo führte jedoch im Vergleich zur neutralen Kontrollbedingung zu signifikant höherer behavioraler Demut. Auch zwischen den beiden Ehrfurchtsbedingungen zeigte sich kein signifikanter Unterschied in der behavioralen Demut. Damit konnte der von Stellar et al. (2018) berichtete Effekt von Ehrfurcht auf behaviorale Demut unter den Bedingungen der vorliegenden Studie nicht repliziert werden. Die Ergebnisse stimmen mit einer weiteren Replikationsstudie überein und verdeutlichen die Notwendigkeit weiterer Forschung zu den Bedingungen eines möglichen Zusammenhangs zwischen Ehrfurcht und behavioraler Demut."
+keywords: [registrierte Replikation, Demut, Ehrfurcht, Emotion, Selbstkonzept, CREP, Videomanipulation]
 bibliography: bibliography.bib
 crossref:
   fig-title: "Abbildung"
