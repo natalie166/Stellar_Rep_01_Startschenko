@@ -128,16 +128,26 @@ Die Ehrfurchtsratings waren nach dem originalen Ehrfurchtsvideo ($M$ = `r sprint
 
 In *E2* wurde explorativ untersucht, ob das moderne Ehrfurchtsvideo im Vergleich zum originalen Ehrfurchtsvideo zu höherer Demut im Verhaltensmaß führt. Der logarithmierte Verhältniswert war nach dem modernen Ehrfurchtsvideo ($n$ = `r sum(dat_E2$condition == "exp_new")`, $M$ = `r sprintf("%.2f", mean(dat_E2$balance_log[dat_E2$condition == "exp_new"], na.rm = TRUE))`, $SD$ = `r sprintf("%.2f", sd(dat_E2$balance_log[dat_E2$condition == "exp_new"], na.rm = TRUE))`) höher als nach dem originalen Ehrfurchtsvideo ($n$ = `r sum(dat_E2$condition == "exp_old")`, $M$ = `r sprintf("%.2f", mean(dat_E2$balance_log[dat_E2$condition == "exp_old"], na.rm = TRUE))`, $SD$ = `r sprintf("%.2f", sd(dat_E2$balance_log[dat_E2$condition == "exp_old"], na.rm = TRUE))`). Der Unterschied war nicht statistisch signifikant, $t$(`r sprintf("%.0f", t_E2$parameter)`) = `r sprintf("%.2f", t_E2$statistic)`, $p$ `r if (t_E2$p.value < .001) "< .001" else paste0("= ", sub("^0", "", sprintf("%.3f", t_E2$p.value)))`, $d$ = `r sprintf("%.2f", effectsize::effectsize(t_E2)$Cohens_d)`.
 
-@fig-humility zeigt die Verteilung der Demut im Verhaltensmaß nach Darbietung des neutralen Videos sowie des originalen und des modernen Ehrfurchtsvideos.
+@fig-humility zeigt die Verteilung der Demut als Verhaltensmaß für das neutrale Video, das ursprüngliche Ehrfurchtsvideo und das neue Ehrfurchtsvideo.
+
+::: {#fig-humility}
 
 ```{r}
-#| label: fig-humility
-#| fig-cap: "Verhaltensmaß der Demut nach der Videodarbietung"
 #| echo: false
+#| fig-width: 6.5
+#| fig-height: 4.2
 #| dev: cairo_pdf
 
 fig_humility
 ```
+
+\begin{minipage}{\linewidth}
+\raggedright
+\textit{Anmerkung.} Dargestellt ist der logarithmierte Quotient aus der Anzahl genannter Stärken zur Anzahl genannter Schwächen. Niedrigere Werte entsprechen höherer Demut. Kleine Punkte zeigen individuelle Werte, große Punkte die Mittelwerte. Fehlerbalken zeigen 95\%-Konfidenzintervalle.
+\end{minipage}
+
+Demut als Verhaltensmaß in den drei Videobedingungen
+:::
 
 # Diskussion
 
@@ -159,6 +169,8 @@ Die vorliegenden Befunde verdeutlichen die Notwendigkeit, die Bedingungen eines 
 
 Die vorliegende Replikation untersuchte den Einfluss von Ehrfurcht auf Demut im Verhaltensmaß. Weder das originale noch das moderne Ehrfurchtsvideo führte im Vergleich zur neutralen Kontrollbedingung zu höherer Demut im Verhaltensmaß. Auch zwischen den beiden Ehrfurchtsbedingungen zeigte sich kein signifikanter Unterschied. Der von @stellar2018 berichtete Effekt von Ehrfurcht auf Demut im Verhaltensmaß konnte somit unter den Bedingungen der vorliegenden Studie nicht repliziert werden.
 
+{{< pagebreak >}}
+
 # References
 
 <!-- References will auto-populate in the refs div below -->
@@ -166,6 +178,3 @@ Die vorliegende Replikation untersuchte den Einfluss von Ehrfurcht auf Demut im 
 ::: {#refs}
 :::
 
-# This Section Is an Appendix {#apx-a}
-
-# Another Appendix {#apx-b}

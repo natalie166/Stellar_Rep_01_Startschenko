@@ -132,55 +132,79 @@ dat_figure <- dat %>%
       condition,
       levels = c("control", "exp_old", "exp_new"),
       labels = c(
-        "Neutrales Video",
-        "Ursprüngliches Ehrfurchtsvideo",
-        "Neues Ehrfurchtsvideo"
+        "Neutrales\nVideo",
+        "Ursprüngliches\nEhrfurchtsvideo",
+        "Neues\nEhrfurchtsvideo"
       )
     )
   )
 
-# Add a note below the figure
+figure_summary <- dat_figure %>%
+  group_by(condition) %>%
+  summarise(
+    n = sum(!is.na(balance_log)),
+    mean = mean(balance_log, na.rm = TRUE),
+    sd = sd(balance_log, na.rm = TRUE),
+    se = sd / sqrt(n),
+    ci_lower = mean - qt(.975, df = n - 1) * se,
+    ci_upper = mean + qt(.975, df = n - 1) * se,
+    .groups = "drop"
+  )
+
 fig_humility <- ggplot(
   dat_figure,
   aes(x = condition, y = balance_log)
 ) +
-  geom_jitter(
-    width = 0.1,
-    alpha = 0.4
+  geom_point(
+    position = position_jitter(
+      width = 0.10,
+      height = 0,
+      seed = 1234
+    ),
+    size = 1.4,
+    alpha = 0.35
   ) +
-  stat_summary(
-    fun = mean,
-    geom = "point",
+  geom_errorbar(
+    data = figure_summary,
+    aes(
+      x = condition,
+      ymin = ci_lower,
+      ymax = ci_upper
+    ),
+    inherit.aes = FALSE,
+    width = 0.12,
+    linewidth = 0.7
+  ) +
+  geom_point(
+    data = figure_summary,
+    aes(
+      x = condition,
+      y = mean
+    ),
+    inherit.aes = FALSE,
     size = 3
   ) +
-  stat_summary(
-    fun.data = mean_cl_normal,
-    geom = "errorbar",
-    width = 0.15
+  labs(
+    x = NULL,
+    y = "Logarithmierter Quotient\nStärken / Schwächen"
   ) +
-  theme_minimal(
+  theme_classic(
     base_family = "Arial",
     base_size = 11
   ) +
-  labs(
-    x = "Bedingung",
-    y = "Behaviorale Demut",
-    caption = paste0(
-      "*Anmerkung.* Dargestellt ist der log-transformierte Quotient aus<br>",
-      "der Anzahl genannter Stärken und Schwächen.<br>",
-      "Niedrigere Werte entsprechen höherer behavioraler Demut.<br>",
-      "Kleine Punkte zeigen individuelle Werte. Große Punkte zeigen Mittelwerte.<br>",
-      "Die Fehlerbalken zeigen 95%-Konfidenzintervalle."
-    )
-  ) +
   theme(
-    plot.caption = ggtext::element_markdown(
-      family = "Arial",
-      hjust = 0,
-      size = 11,
-      lineheight = 1.1,
-      margin = margin(t = 8)
+    axis.text.x = element_text(
+      size = 9.5,
+      lineheight = 0.9,
+      margin = margin(t = 7)
+    ),
+    axis.title.y = element_text(
+      margin = margin(r = 8)
+    ),
+    plot.margin = margin(
+      t = 5,
+      r = 10,
+      b = 5,
+      l = 5
     )
   )
-
-fig_humility
