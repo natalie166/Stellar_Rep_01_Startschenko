@@ -1,42 +1,38 @@
-Replikationsstudie Stellar et al. (2018)
+# Replikationsstudie Stellar et al. (2018)
 
-Dieses Repository enthält meine Hausarbeit zur LMU-Replikationsstudie von Stellar et al. (2018). Die Replikationsstudie wurde im Sommersemester 2026 im Rahmen des Forschungsorientierten Praktikums I als Teil des CREP-Projekts durchgeführt.
+Dieses Repository enthält den Code und das Manuskript meiner Hausarbeit zur LMU-Replikationsstudie von [Stellar et al. (2018)](https://doi.org/10.1037/pspi0000109), die im Sommersemester 2026 im Rahmen des Forschungsorientierten Praktikums I als Teil des [CREP-Projekts](https://www.crep-psych.org) durchgeführt wurde.
 
-Autorin: Natalie Startschenko
+Autorin: Natalie Startschenko  
 Kontakt: n.startschenko@campus.lmu.de
 
-Das Repository basiert auf dem von Felix Schönbrodt bereitgestellten Template für die Replikationsstudie.
+Das Repository basiert auf dem von Felix Schönbrodt bereitgestellten Repository für die Replikationsstudie.
 
-This is the shared course repository for analyzing the LMU replication study of Stellar et al. (2018), done in summer 2026 as part of the [CREP project](https://www.crep-psych.org).
+- [Lehrmaterial zur Veranstaltung](https://nicebread.github.io/Empra1_2026/)
+- [Präregistrierung](https://osf.io/537aq)
+- [OSF-Projekt](https://osf.io/cy287/overview) mit Materialien
 
-- [Course teaching material](https://nicebread.github.io/Empra1_2026/)
-- [Preregistration](https://osf.io/537aq)
-- [OSF project](https://osf.io/cy287/overview) with materials
+## Reproduzierbarkeit
 
+### Offene Daten
 
-## Reproducibility
+Alle für die Reproduktion der Ergebnisse erforderlichen Primärdaten befinden sich im Unterordner `/raw_data`:
 
-### Open Data
-
-All primary data necessary for reproducing the results is in the `/raw_data` subfolder:
-
-- `Rep01_anonymized.csv`: The study data (item ratings, raw text of writing assignment)
-- `Rep01_demographics_anonymized.csv`: The demographic data of the final sample. ATTENTION: For privacy reasons within the course itself (where students might have participation knowledge of specific individuals), the order in this data set was randomized, so that the rows do not match the rows in `Rep01_anonymized.csv`. Do NOT try to merge these two data sets.
+- `Rep01_anonymized.csv`: Studiendaten (Itemratings und Rohtext der Schreibaufgabe)
+- `Rep01_demographics_anonymized.csv`: Demografische Daten der finalen Stichprobe. ACHTUNG: Aus Datenschutzgründen innerhalb der Veranstaltung (da Studierende möglicherweise Kenntnis über die Teilnahme bestimmter Personen haben) wurde die Reihenfolge in diesem Datensatz randomisiert. Daher entsprechen die Zeilen nicht den Zeilen in `Rep01_anonymized.csv`. Die beiden Datensätze dürfen NICHT zusammengeführt werden.
 - `Rep01_ratings.xlsx`
 
-The data dictionary is in `doc/Data_Dictionary.ods`.
+Das Codebuch befindet sich unter `doc/Data_Dictionary.ods`.
 
-### Open Reproducible Code
+### Offener reproduzierbarer Code
 
-- Set the working directory to the root folder of this project.
-- There is no need to re-run the script `0a-merge_ratings.R`. This only needs to be done when new data with new writing assignments comes in.
-- To reproduce all results, run the scripts `0b-preprocessing.R` to `4-exploratory_analyses.R` in the numerical order.
+- Das Arbeitsverzeichnis muss auf den Stammordner dieses Projekts gesetzt werden.
+- Das Skript `0a-merge_ratings.R` muss nicht erneut ausgeführt werden. Dies ist nur erforderlich, wenn neue Daten mit neuen Schreibaufgaben hinzukommen.
+- Um alle Ergebnisse zu reproduzieren, müssen die Skripte `0b-preprocessing.R` bis `4-exploratory_analyses.R` in numerischer Reihenfolge ausgeführt werden.
 
-### Reproducible Manuscript
+### Reproduzierbares Manuskript
 
-`manuscript/manuscript.qmd` is the manuscript in apaquarto format. It first sources all R files to make the objects available and then dynamically creates the numbers in the manuscript.
+`manuscript/manuscript.qmd` enthält das Manuskript im apaquarto-Format. Zunächst werden alle R-Dateien eingelesen, um die entsprechenden Objekte verfügbar zu machen. Anschließend werden die Kennwerte im Manuskript dynamisch erzeugt.
 
-## License
+## Lizenz
 
-This repository was created by [Felix Schönbrodt](https://nicebread.de).
-All code in this repository is under a CC-BY 4.0 license.
+Dieses Repository basiert auf einem von [Felix Schönbrodt](https://nicebread.de) erstellten Repository. Der gesamte Code in diesem Repository steht unter einer CC-BY-4.0-Lizenz.

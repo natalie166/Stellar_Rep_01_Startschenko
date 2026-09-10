@@ -118,7 +118,6 @@ ggplot(dat_E2, aes(x = condition, y = balance_log)) +
 
 # E6: We explore the moderating effect of participants’ self-reported attentiveness on the awe-inducing effect of the video (awe video vs. control condition).
 
-
 # Figure for manuscript
 # ========================================================
 # Visualize behavioral humility across all three conditions
@@ -132,9 +131,9 @@ dat_figure <- dat %>%
       condition,
       levels = c("control", "exp_old", "exp_new"),
       labels = c(
-        "Neutrales\nVideo",
-        "Ursprüngliches\nEhrfurchtsvideo",
-        "Neues\nEhrfurchtsvideo"
+        "Neutrale\nKontrollbedingung",
+        "Originale\nEhrfurchtsbedingung",
+        "Moderne\nEhrfurchtsbedingung"
       )
     )
   )
